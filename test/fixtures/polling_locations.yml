@@ -4,12 +4,12 @@ one:
   title: MyString
   address: MyString
   city: MyString
-  postal_code: MyString
+  postal_code: L1L 1L1
   riding: one
 
 two:
   title: MyString
   address: MyString
   city: MyString
-  postal_code: MyString
+  postal_code: L1L 1L1
   riding: two

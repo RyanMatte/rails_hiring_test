@@ -1,0 +1,34 @@
+<%= form_with(model: [polling_location.riding, polling_location], local: false) do |form| %>
+  <% if polling_location.errors.any? %>
+    <div class="mb-4">
+      <h2 class="text-red-600">Errors:</h2>
+      <ul>
+        <% polling_location.errors.full_messages.each do |message| %>
+          <li class="text-red-600"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="flex flex-wrap mr-8 mb-6">
+    <div class="w-full md:w-1/4 px-2 mb-4 md:mb-0">
+      <%= form.label :title, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.text_field :title, class: "mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+    </div>
+    <div class="w-full md:w-1/4 px-2">
+      <%= form.label :address, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.text_field :address, class: "mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+    </div>
+    <div class="w-full md:w-1/4 px-2 mb-4 md:mb-0">
+      <%= form.label :city, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.text_field :city, class: "mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+    </div>
+    <div class="w-full md:w-1/4 px-2">
+      <%= form.label :postal_code, class: "block text-sm font-medium text-gray-700" %>
+      <%= form.text_field :postal_code, class: "mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
+    </div>
+  </div>
+  <div class="flex justify-end space-x-2 mr-24 mb-4">
+    <%= form.submit "Save", class: "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+    <%= link_to "Cancel", "#", class: "inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500", data: { turbo_frame: dom_id(polling_location) } %>
+  </div>
+<% end %>
