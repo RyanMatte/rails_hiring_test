@@ -1,0 +1,2 @@
+<%= turbo_stream.replace "flash", partial: "layouts/flash" %>
+<%= turbo_stream.replace "polling_location_#{@polling_location.id}", partial: "polling_locations/polling_location", locals: { polling_location: @polling_location } %>
